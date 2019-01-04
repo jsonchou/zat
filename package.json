@@ -1,0 +1,39 @@
+{
+  "name": "zat",
+  "version": "1.1.4",
+  "description": "",
+  "main": "./libs/umd.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "rollup --config ./build/rollup.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zat",
+    "template engine"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsonchou/zat.git"
+  },
+  "homepage": "https://github.com/jsonchou/zat",
+  "author": "jsonchou",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-terser": "^3.0.0",
+    "rollup-plugin-uglify": "^6.0.0"
+  },
+  "dependencies": {
+    "htmlparser2": "^3.10.0"
+  }
+}

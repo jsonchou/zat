@@ -6,10 +6,22 @@ class ZAT {
             ...this.$options.methods,
             ...this.$options.data,
         }
-        this.doMethods()
-        this.doMounted()
-        this.doComputed()
-        this.doWatch()
+        this.init(() => {
+            this.doMethods()
+            this.doMounted()
+            this.doComputed()
+            this.doWatch()
+        })
+    }
+    init(events) {
+        let el = 'body'
+        if (this.$options.el) {
+            el = document.querySelector(this.$options.el)
+        }
+        Object.assign(this.$proxyTable, {
+            '$el': el
+        })
+        events && events()
     }
     doMethods() {
         let methods = Object.keys(this.$options.methods)
@@ -23,7 +35,7 @@ class ZAT {
     doComputed() {
         let computed = Object.keys(this.$options.computed)
         computed.forEach((item) => {
-            //do some watch code
+            //do some computed code
             this.$options.computed[item].call(this.$proxyTable)
         })
     }
@@ -38,6 +50,7 @@ class ZAT {
 }
 
 let app = new ZAT({
+    el: '#app',
     data: {
         cfg: {
             width: 300,
