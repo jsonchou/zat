@@ -1,2 +1,2 @@
-# ZAT 
+# zat
 ## a simple single page template engine with style of vue
